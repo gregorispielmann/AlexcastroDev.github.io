@@ -1,9 +1,177 @@
 <html>
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:url"           content="https://cv.fluttership.com.br" />
+    <meta property="og:type"          content="website" />
+    <meta property="og:title"         content="Alexandro Castro" />
+    <meta property="og:description"   content="CV Alexandro Castro" />
+    <meta property="og:image"         content="https://i.imgur.com/5vIKSig.png" />
 
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="icon" type="image/png" href="https://i.imgur.com/5vIKSig.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
+    <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
 </head>
 <body>
-<h1>Testee</h1>
-  <?php echo "sera?"; ?>
+    <div id="app">
+     <div>
+      <div class="top-image full">
+          <b-container >
+            <b-row class="text-center full align-content-center">
+              <b-col cols="12" align-self="center"><b-avatar size="xl">
+                <b-img :width="90" src="https://imgur.com/l9sllNy.png" alt="me"></b-img>
+              </b-avatar></b-col>
+              <b-col  cols="12" align-self="center pt-1">
+                <span class="name">Alex Castro</span>
+                  </b-col>
+                  <b-col  cols="12" align-self="center">
+                    <span class="whoami">I'm a  {{whoami}}</span>
+                      </b-col>  
+            </b-row>
+          
+
+</b-container>
+      <div v-if="window.innerWidth < 600">
+          <img class="lang dart"  src="assets/dart.png">
+          <img class="lang php"  src="assets/php.png">
+          <img class="lang flutter"  src="assets/flutter.png">
+          <img class="lang react"  src="assets/react.png">
+          <img class="lang angular"  src="assets/angular.png">
+          <img class="lang js"  src="assets/js.png">
+          <img class="lang bootstrap"  src="assets/bootstrap.png">
+          <img class="lang vue"  src="assets/vue.png">
+          <img class="lang jquery"  src="assets/jquery.png">
+          <img class="lang docker"  src="assets/docker.png">
+          <img class="lang mysql"  src="assets/mysql.png">
+          <img class="lang laravel"  src="assets/laravel.png">
+        </div>
+        </div>
+       
+    
+  <div class="vh-footer">
+      <b-container >
+        <b-row class="text-center">
+          <b-col class="cp" cols="12">This website is working in progress, dont judge me <i class="fa fa-heart text-danger"></i> </b-col>
+          <b-col class="cp" cols="12">Created with <i class="fa fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></b-col>
+          </b-row>
+
+        <b-row class="text-center pt-3 align-self-center">
+          <b-col class="socials" cols="12">
+           <a href="https://www.linkedin.com/in/alexandro-castro-23420a173/"><i class="fa fa-linkedin text-info mr-1"></i></a>
+           <a href="http://github.com/alexcastroDev/"><i class="fa fa-github mr-1"></i></a>
+           </b-col>
+        </b-row>
+     
+      </b-container>
+    </div>
+    </div>
 </body>
+
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+          whoami: "",
+        },
+        methods: {
+        movingMouse(event) {
+          let w = window.innerWidth
+          let  elements = [
+            {
+              element:  document.querySelector('.dart'),
+              x: 30,
+              y: 20
+            },
+            {
+              element:  document.querySelector('.php'),
+              x: w - 400 ,
+              y: 20
+            },
+            {
+              element:  document.querySelector('.flutter'),
+              x: w - 500 ,
+              y: 180
+            },
+            {
+              element:  document.querySelector('.react'),
+              x: 840 ,
+              y: 660
+            },
+            {
+              element:  document.querySelector('.angular'),
+              x: w - 500 ,
+              y: 380
+            },
+            {
+              element:  document.querySelector('.js'),
+              x: 120 ,
+              y: 180
+            },
+            {
+              element:  document.querySelector('.vue'),
+              x: 180 ,
+              y: 380
+            },
+            {
+              element:  document.querySelector('.docker'),
+              x: w - 360 ,
+              y: 500
+            },
+            {
+              element:  document.querySelector('.mysql'),
+              x: 20 ,
+              y: 500
+            },
+            {
+              element:  document.querySelector('.laravel'),
+              x: w - 300 ,
+              y: 280
+            },
+            {
+              element:  document.querySelector('.jquery'),
+              x: 340 ,
+              y: 560
+            },
+            {
+              element:  document.querySelector('.bootstrap'),
+              x: 140 ,
+              y: 560
+            },
+           ];
+
+           for(let item of elements) {
+             item.element.style.opacity =1
+             TweenMax.to(item.element, 1, {
+              x: item.x + event.clientX / 10,
+              y: item.y + event.clientY / 10
+            });
+           }
+                  }
+      },
+      mounted() {
+        window.addEventListener('mousemove', this.movingMouse);
+        let whoami = ['Software Engineer','Frontend Developer', 'Backend  Developer']
+        let i = 0;
+        
+        setInterval(() => { 
+          if(i >= whoami.length)  {
+            i = 0;
+          }
+          this.whoami = whoami[i];
+          i++;
+         }, 2000);
+
+        
+      },
+      destroyed() {
+        window.removeEventListener('mousemove', this.movingMouse);
+      },
+    })
+</script>
 </html>

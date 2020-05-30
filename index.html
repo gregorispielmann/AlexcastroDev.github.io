@@ -17,6 +17,8 @@
     <link type="text/css" rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
     <script src="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.js"></script>
+    <script src="https://unpkg.com/vue-screen/dist/vue-screen.min.js"></script>
+
 </head>
 <body>
     <div id="app">
@@ -37,7 +39,7 @@
           
 
 </b-container>
-      <div v-if="window.innerWidth < 600">
+      <div v-if="!isMobile()">
           <img class="lang dart"  src="assets/dart.png">
           <img class="lang php"  src="assets/php.png">
           <img class="lang flutter"  src="assets/flutter.png">
@@ -80,6 +82,12 @@
           whoami: "",
         },
         methods: {
+          isMobile() {
+            if(this.$screen.lg){
+              return false;
+            }
+            return true;
+          },
         movingMouse(event) {
           let w = window.innerWidth
           let  elements = [
@@ -155,7 +163,9 @@
                   }
       },
       mounted() {
-        window.addEventListener('mousemove', this.movingMouse);
+        if(!this.isMobile()) {
+          window.addEventListener('mousemove', this.movingMouse);
+        }
         let whoami = ['Software Engineer','Frontend Developer', 'Backend  Developer']
         let i = 0;
         

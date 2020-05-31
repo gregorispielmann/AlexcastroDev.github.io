@@ -27,14 +27,28 @@
           <b-container >
             <b-row class="text-center full align-content-center">
               <b-col cols="12" align-self="center"><b-avatar class="fixBootstrapAvatar" size="lg">
-                <b-img :width="90" src="https://imgur.com/l9sllNy.png" alt="me"></b-img>
+                <b-img :width="90" src="assets/me.jpeg" alt="me"></b-img>
               </b-avatar></b-col>
               <b-col  cols="12" align-self="center pt-1">
                 <span class="name">Alex Castro</span>
                   </b-col>
                   <b-col  cols="12" align-self="center">
-                    <span class="whoami">I'm a  {{whoami}}</span>
-                      </b-col>  
+                    <span class="whoami">I'm a  
+                      <span class="whoami whoami-animation"> {{whoami}}</span>
+                    </span>
+                   </b-col>
+                   <b-col  cols="12" align-self="center" class="pt-4">
+                    <a href="https://www.linkedin.com/in/alexandro-castro-23420a173/" target="_blank"><i class="fa fa-linkedin text-white  socials"></i></a>
+                    <a href="https://github.com/AlexcastroDev" target="_blank"><i class="fa fa-github text-white pl-2 socials"></i></a>
+                    <a href="https://fluttership.com.br" target="_blank"><i class="fa fa-globe text-white pl-2 socials"></i></a>
+                  </b-col>
+                  <b-col  cols="12" align-self="center" class="pt-4">
+                    <b-button variant="outline-light">Hire me</b-button>
+                  </b-col>
+                  <b-col  cols="12" align-self="center" class="pt-4  mouse-wrapper">
+                    <span class="text-white ">Scroll down</span>
+                    <span class="mouse"> <span class="wheel"></span> </span>
+                  </b-col>
             </b-row>
           
 
@@ -79,7 +93,7 @@
     var app = new Vue({
         el: '#app',
         data: {
-          whoami: "",
+          whoami: "Developer",
         },
         methods: {
           isMobile() {
@@ -108,8 +122,8 @@
             },
             {
               element:  document.querySelector('.react'),
-              x: 840 ,
-              y: 660
+              x: 400 ,
+              y: 80
             },
             {
               element:  document.querySelector('.angular'),
@@ -148,8 +162,8 @@
             },
             {
               element:  document.querySelector('.bootstrap'),
-              x: 140 ,
-              y: 560
+              x: 550 ,
+              y: 30
             },
            ];
 

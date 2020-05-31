@@ -2,6 +2,12 @@ body {
     overflow-x: hidden;
 }
 
+
+.mouse-wrapper {
+    bottom: 20px;
+    position: absolute;
+    padding-right: 5%;
+}
 /* */
 
 .fixBootstrapAvatar {
@@ -13,6 +19,62 @@ body {
     border-radius: 50% !important;
     width: 6.5em !important;
 }
+
+.socials {
+    font-size: x-large;
+}
+
+.mouse {
+    border: solid 2px #fff;
+    border-radius: 16px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+    height: 26px;
+    position: relative;
+    width: 20px;
+}
+
+.mouse .wheel {
+    background: #fff;
+    border-radius: 100%;
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 4px;
+    width: 4px;
+    -webkit-animation: ani-mouse 2s linear infinite;
+    -moz-animation: ani-mouse 2s linear infinite;
+    animation: ani-mouse 2s linear infinite;
+}
+
+@keyframes ani-mouse { 
+    0%   {top: 4px;}
+    25%  {top: 10px;}
+    50%  {top: 15px;}
+    75%  {top: 10px}
+    100% {top: 4px;}
+    }
+
+.whoami-animation {
+    animation: bounceIn 2s infinite;
+    -webkit-animation: bounceIn 2s infinite; /*Chrome, Safari, Opera*/
+  }
+
+  @keyframes bounceIn { 
+    0% { transform: scale(0.1); opacity: 0; } 
+    60% { transform: scale(1.2); opacity: 1; } 
+    100% { transform: scale(1); } 
+    }
+    /* Chrome, Safari, Opera */ 
+    @-webkit-keyframes bounceIn {
+    0% { transform: scale(0.1); opacity: 0; } 
+    60% { transform: scale(1.2); opacity: 1; } 
+    100% { transform: scale(1); } 
+    }
+  
 
 .top-image {
     background-color: #353353 !important;

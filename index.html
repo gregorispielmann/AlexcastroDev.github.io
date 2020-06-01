@@ -230,7 +230,7 @@
                   },
       menuDrawer(payload, check = false) {
         if(check) {
-          this.menu = isMobile() ?  payload : this.menu;
+          this.menu = this.isMobile() ?  payload : this.menu;
         } else{
           this.menu = payload;
         }

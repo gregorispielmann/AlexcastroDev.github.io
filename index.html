@@ -32,8 +32,8 @@
        <b-sidebar :width="110" id="sidebar-border" v-model="menu" bg-variant="none" sidebar-class="main-menu">
         <b-navbar-nav data-scroll-header class="text-center" align="center">
           <a class="pb-3" @click="menuDrawer(false, true)" data-scroll href="#home"><i class="fas fa-home"></i></a>
-          <a @click="menuDrawer(false, true)" data-scroll href="#about"><i class="fas fa-user-tie"></i></a>
-          <!-- <b-nav-item @click="menuDrawer(false, true)" to="#about"><i class="fas fa-user-tie"></i></b-nav-item> -->
+          <a class="pb-3" @click="menuDrawer(false, true)" data-scroll href="#about"><i class="fas fa-user-tie"></i></a>
+          <a class="pb-3" @click="menuDrawer(false, true)" data-scroll href="#experience"><i class="fas fa-briefcase"></i></a>
         </b-navbar-nav>
         <template v-slot:footer>
           <div class="d-flex text-light copyright align-items-center px-3 py-2">
@@ -100,7 +100,7 @@
     <b-container >
       <div class="spacer-inner"></div>
       <section id="about" :class="menu ? 'pl-5' : ''">
-        <h2 class="title-section pb-5">About me</h2>
+        <h2 class="title-section title-animation pb-5">About me</h2>
         <div class="row">
           <div class="col-12 col-lg-2 col-md-12 text-center pt-5">
             <b-avatar class="fixBootstrapAvatar" size="lg">
@@ -108,16 +108,46 @@
             </b-avatar>
             </div>
 
-            <div class="col-12 col-lg-10 col-md-12 p-2">
-            <b-card bg-variant="white" text-variant="dark" title="Hello, Company!">
-            <b-card-text>
-              <p>I am Alexandro Castro, Software Engineer from Curitiba, Paraná, Brazil. </p>
-              <p>I have large experience with web development frontend and backend.</p>
-            </b-card-text>
-            <b-button href="https://docs.google.com/document/d/1IRYU1Gy06o71jVzgFhNLRLkCi38jYaFv" target="blank" variant="danger"><i class="fab fa-google-drive"></i> Download my CV</b-button>
+            <div class="col-12 col-lg-10 col-md-12 mt-3 p-2">
+            <div class="arrow"></div>
+            <b-card bg-variant="white" text-variant="dark" title="Hello, Company!" class="radius-card shadow-card ">
+              <div class="row">
+                <div class="col-12 col-lg-6 col-md-12">
+                <b-card-text>
+                  <p>I am Alexandro Castro, Software Engineer from Curitiba, Paraná, Brazil. </p>
+                  <p>I have large experience with web development frontend and backend.</p>
+                  
+                </b-card-text>
+                <b-button href="https://docs.google.com/document/d/1IRYU1Gy06o71jVzgFhNLRLkCi38jYaFv" target="blank" variant="danger"><i class="fab fa-google-drive"></i> Download my CV</b-button>
+              </div>
+              <div class="col-12 col-lg-6 col-md-12 mt-2">
+                <b-progress class="mt-2" max="100" show-value>
+                  <b-progress-bar value="70" label="PHP" variant="primary"></b-progress-bar>
+                  <b-progress-bar value="30" label="NodeJS" variant="danger"></b-progress-bar>
+                </b-progress>
+                <b-progress class="mt-4" max="100" show-value>
+                  <b-progress-bar value="60" label="Laravel" variant="success"></b-progress-bar>
+                  <b-progress-bar value="40" label="Adonis" variant="danger"></b-progress-bar>
+                </b-progress>
+                <b-progress class="mt-4" max="100" show-value>
+                  <b-progress-bar clas value="40" label="VueJS" variant="success"></b-progress-bar>
+                  <b-progress-bar value="40" label="React" variant="danger"></b-progress-bar>
+                  <b-progress-bar value="20" label="jQuery" variant="info"></b-progress-bar>
+                  <b-progress-bar value="40" label="VanillaJS" variant="warning"></b-progress-bar>
+                </b-progress>
+              </div>
+            </div>
             <!-- Cover Letter in Progress -->
             <!-- <b-button href="#" target="blank" variant="danger"><i class="fab fa-google-drive"></i> Download my Cover Letter</b-button> -->
           </b-card></div>
+        </div>
+      </section>
+      <div class="spacer-inner"></div>
+      <section id="experience" :class="menu ? 'pl-5' : ''">
+        <h2 class="title-section title-animation pb-5">Experience</h2>
+        <div class="row">
+          Soon...
+       </div> 
         </div>
       </section>
     </b-container>
@@ -127,10 +157,11 @@
     
   <div class="footer">
       <b-container >
-        <b-row class="text-center">
-          <b-col class="cp" cols="12">This website is working in progress, dont judge me <i class="fas fa-heart text-danger"></i> </b-col>
-          <b-col class="cp" cols="12">Created with <i class="fas fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></b-col>
-          </b-row>
+
+        <div class="text-center row">
+          <div class="cp col-12" >Created with <i class="fas fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></div>
+          <div class="cp col-12" >This website is working in progress, dont judge me <i class="fas fa-heart text-danger"></i></a></div>
+          </div>
 
         <b-row class="text-center pt-3 align-self-center">
           <b-col class="socials" cols="12">

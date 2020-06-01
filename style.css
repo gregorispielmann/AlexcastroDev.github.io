@@ -157,7 +157,47 @@ html {
         font-weight: 900;
         margin-left: 14px;
         position: relative;
+        border-bottom: 1px solid rgba(0,0,0,.05);
+    padding-bottom: 1rem;
+    margin-bottom: 2rem;
+    position: relative;
+    line-height: 1rem;
 }
+
+.title-section::after {
+    content: "";
+    background-color: #454360;
+    width: 44px;
+    height: 6px;
+    border-radius: .25rem;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+}
+
+.radius-card {
+    border-radius: 20px;
+}
+
+.shadow-card {
+    -webkit-box-shadow: 0px 0px 80px 0px  rgb(216, 214, 214);
+    -moz-box-shadow: 0px 0px 80px 0px  rgb(216, 214, 214);
+    box-shadow: 0px 0px 80px 0px  rgb(216, 214, 214);;
+}
+
+.arrow {
+  width: 0; 
+  height: 0; 
+  left: -2;
+  top:100px;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent; 
+  position: absolute;
+  border-right:10px solid #c3c3c3; 
+}
+
+
 
 /*
  * Footer
@@ -249,8 +289,18 @@ html {
             padding-top: 0px !important;
         }
       }
-    
+      
   }
+
+  @media only screen and (max-width: 600px) {
+        .arrow {
+        width: 0; 
+        height: 0; 
+        left: 48% !important;
+        top:-1px !important;
+        border-left: 5px solid transparent !important;
+        }
+    }
 
 
 /*
@@ -282,3 +332,7 @@ html {
     100% { transform: scale(1); } 
     }
   
+.title-animation {
+    -webkit-animation-duration: 1.25s;
+    animation-duration: 1.25s;
+}

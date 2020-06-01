@@ -29,16 +29,10 @@
     <div id="app">
 
              <!--  Menu -->
-      <!-- <div class="main-menu nav-layout" v-if="menu">
-        <b-navbar-nav  class="text-center" align="center">
-          <b-nav-item><i class="fas fa-home"></i></b-nav-item>
-          <b-nav-item><i class="fas fa-user-tie"></i></b-nav-item>
-        </b-navbar-nav>
-      </div> -->
        <b-sidebar :width="110" id="sidebar-border" v-model="menu" bg-variant="none" sidebar-class="main-menu">
         <b-navbar-nav  class="text-center" align="center">
-          <b-nav-item to="#home"><i class="fas fa-home"></i></b-nav-item>
-          <b-nav-item to="#about"><i class="fas fa-user-tie"></i></b-nav-item>
+          <b-nav-item @click="menuDrawer(false, true)" to="#home"><i class="fas fa-home"></i></b-nav-item>
+          <b-nav-item @click="menuDrawer(false, true)" to="#about"><i class="fas fa-user-tie"></i></b-nav-item>
         </b-navbar-nav>
         <template v-slot:footer>
           <div class="d-flex text-light copyright align-items-center px-3 py-2">
@@ -234,8 +228,12 @@
             });
            }
                   },
-      menuDrawer(payload) {
+      menuDrawer(payload, check = false) {
+        if(check) {
+          this.menu = isMobile() ?  payload : this.menu;
+        } else{
           this.menu = payload;
+        }
       }
       },
       mounted() {

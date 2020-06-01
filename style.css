@@ -234,19 +234,22 @@ html {
  * -------------------------------------------------------- */
 
 @media (orientation: landscape) {
-    .copyright {
-        display: none !important;
-    }
-    .mouse-wrapper {
-      display: none;
-    }
-    .mobile-top {
-        flex-direction: column !important;
-        padding-top: 0px !important;
-    }
-    .full {
-        height: 150vh !important;
-    }
+    @media only screen and (max-width: 600px) {
+        .full {
+            height: 150vh !important;
+        }
+        .copyright {
+            display: none !important;
+        }
+        .mouse-wrapper {
+          display: none;
+        }
+        .mobile-top {
+            flex-direction: column !important;
+            padding-top: 0px !important;
+        }
+      }
+    
   }
 
 

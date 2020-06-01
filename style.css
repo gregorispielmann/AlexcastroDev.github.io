@@ -4,11 +4,45 @@ body {
 
 
 .mouse-wrapper {
-    bottom: 20px;
     position: absolute;
-    padding-right: 5%;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
-/* */
+
+.main-menu {
+    color: #fff;
+    border-right: solid 1px rgba(255,255,255,.1);
+    background: #353353;
+    z-index: 1;
+}
+
+.menu-icon {
+    font-size: 20px;
+}
+
+.main-menu  a {
+    color: #fff;
+    font-size: 20px  !important;
+}
+
+.mobile-top {
+    flex-direction: column;
+    padding-top: 5.5rem ;
+}
+
+.copyright {
+    height: 200px;
+    width: auto;
+    color: #9c9ab3;
+    font-size: 14px;
+    transform: rotate(-180deg);
+    writing-mode: vertical-rl;
+    white-space: nowrap;
+    display: inline-block;
+    overflow: visible;
+}
 
 .fixBootstrapAvatar {
     width: 6.5em !important;

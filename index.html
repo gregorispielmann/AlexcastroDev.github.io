@@ -6,13 +6,17 @@
     <meta property="og:title"         content="Alexandro Castro" />
     <meta property="og:description"   content="CV Alexandro Castro" />
     <meta property="og:image"         content="https://i.imgur.com/5vIKSig.png" />
+    <meta name="description" content="CV Alexandro Castro">
+    <meta name="keywords" content="developer, canada, europe, cv, card">
+    <meta name="author" content="Alexandro Castro">
 
     <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap/dist/css/bootstrap.min.css" />
     <link type="text/css" rel="stylesheet" href="https://unpkg.com/bootstrap-vue@latest/dist/bootstrap-vue.min.css" />
-    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="icon" type="image/png" href="https://i.imgur.com/5vIKSig.png" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
     
     <link type="text/css" rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
@@ -21,38 +25,65 @@
 
 </head>
 <body>
+       <!--  Vue App -->
     <div id="app">
-     <div>
+
+             <!--  Menu -->
+      <!-- <div class="main-menu nav-layout" v-if="menu">
+        <b-navbar-nav  class="text-center" align="center">
+          <b-nav-item><i class="fas fa-home"></i></b-nav-item>
+          <b-nav-item><i class="fas fa-user-tie"></i></b-nav-item>
+        </b-navbar-nav>
+      </div> -->
+       <b-sidebar :width="110" id="sidebar-border" v-model="menu" bg-variant="none" sidebar-class="main-menu">
+        <b-navbar-nav  class="text-center" align="center">
+          <b-nav-item><i class="fas fa-home"></i></b-nav-item>
+          <b-nav-item><i class="fas fa-user-tie"></i></b-nav-item>
+        </b-navbar-nav>
+        <template v-slot:footer>
+          <div class="d-flex text-light copyright align-items-center px-3 py-2">
+           <span class="p-4"> © 2020 Alexandro Castro </span>
+          </div>
+         </template>
+    </b-sidebar>
+             <!-- end menu -->
+             <!--  top -->
       <div class="top-image full">
           <b-container >
-            <b-row class="text-center full align-content-center">
-              <b-col cols="12" align-self="center"><b-avatar class="fixBootstrapAvatar" size="lg">
-                <b-img :width="90" src="assets/me.jpeg" alt="me"></b-img>
-              </b-avatar></b-col>
-              <b-col  cols="12" align-self="center pt-1">
+          <div class="menu-icon p-4 text-right" @click="menuDrawer(!menu)"  v-if="isMobile()">
+            <b-button variant="none">
+               <i class="fas text-white fa-bars"></i>
+            </b-button>
+          </div>
+            <b-row class="text-center full" :class="isMobile() ? 'mobile-top' : ''">
+              <b-col  cols="12" align-self="center">
+                <p>
+                  <b-avatar class="fixBootstrapAvatar" size="lg">
+                    <b-img :width="90" src="assets/me.jpeg" alt="me"></b-img>
+                  </b-avatar>
+                </p>
                 <span class="name">Alex Castro</span>
-                  </b-col>
-                  <b-col  cols="12" align-self="center">
-                    <span class="whoami">I'm a  
-                      <span class="whoami whoami-animation"> {{whoami}}</span>
-                    </span>
-                   </b-col>
-                   <b-col  cols="12" align-self="center" class="pt-4">
-                    <a href="https://www.linkedin.com/in/alexandro-castro-23420a173/" target="_blank"><i class="fa fa-linkedin text-white  socials"></i></a>
-                    <a href="https://github.com/AlexcastroDev" target="_blank"><i class="fa fa-github text-white pl-2 socials"></i></a>
-                    <a href="https://fluttership.com.br" target="_blank"><i class="fa fa-globe text-white pl-2 socials"></i></a>
-                  </b-col>
-                  <b-col  cols="12" align-self="center" class="pt-4">
+                <p> <span class="whoami">I'm a  
+                  <span class="whoami whoami-animation"> {{whoami}}</span>
+                  <p>
                     <b-button variant="outline-light">Hire me</b-button>
-                  </b-col>
-                  <b-col  cols="12" align-self="center" class="pt-4  mouse-wrapper">
+                  </p>
+                  <p>
+                    <a href="https://www.linkedin.com/in/alexandro-castro-23420a173/" target="_blank"><i class="fab fa-linkedin text-white  socials"></i></a>
+                    <a href="https://github.com/AlexcastroDev" target="_blank"><i class="fab fa-github text-white pl-2 socials"></i></a>
+                    <a href="https://fluttership.com.br" target="_blank"><i class="fa fa-globe text-white pl-2 socials"></i></a>
+                  </p>
+                </span>
+               </p>
+               </b-col>
+                  <b-col  cols="12" align-self="center" class="pt-4 mouse-wrapper">
                     <span class="text-white ">Scroll down</span>
                     <span class="mouse"> <span class="wheel"></span> </span>
                   </b-col>
             </b-row>
-          
-
 </b-container>
+
+      <!--floating langs-->
       <div v-if="!isMobile()">
           <img class="lang dart"  src="assets/dart.png">
           <img class="lang php"  src="assets/php.png">
@@ -66,26 +97,27 @@
           <img class="lang docker"  src="assets/docker.png">
           <img class="lang mysql"  src="assets/mysql.png">
           <img class="lang laravel"  src="assets/laravel.png">
-        </div>
-        </div>
+      </div> <!-- end floating langs-->
+       <!--  end top -->
+    </div> 
+    
        
     
   <div class="vh-footer">
       <b-container >
         <b-row class="text-center">
-          <b-col class="cp" cols="12">This website is working in progress, dont judge me <i class="fa fa-heart text-danger"></i> </b-col>
-          <b-col class="cp" cols="12">Created with <i class="fa fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></b-col>
+          <b-col class="cp" cols="12">This website is working in progress, dont judge me <i class="fas fa-heart text-danger"></i> </b-col>
+          <b-col class="cp" cols="12">Created with <i class="fas fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></b-col>
           </b-row>
 
         <b-row class="text-center pt-3 align-self-center">
           <b-col class="socials" cols="12">
-           <a href="https://www.linkedin.com/in/alexandro-castro-23420a173/"><i class="fa fa-linkedin text-info mr-1"></i></a>
-           <a href="http://github.com/alexcastroDev/"><i class="fa fa-github mr-1"></i></a>
+           <a href="https://www.linkedin.com/in/alexandro-castro-23420a173/"><i class="fab fa-linkedin text-info mr-1"></i></a>
+           <a href="http://github.com/alexcastroDev/"><i class="fab fa-github-alt mr-1"></i></a>
            </b-col>
         </b-row>
      
       </b-container>
-    </div>
     </div>
 </body>
 
@@ -94,6 +126,7 @@
         el: '#app',
         data: {
           whoami: "Developer",
+          menu: true
         },
         methods: {
           isMobile() {
@@ -107,7 +140,7 @@
           let  elements = [
             {
               element:  document.querySelector('.dart'),
-              x: 30,
+              x: 130,
               y: 20
             },
             {
@@ -147,7 +180,7 @@
             },
             {
               element:  document.querySelector('.mysql'),
-              x: 20 ,
+              x: 120 ,
               y: 500
             },
             {
@@ -174,12 +207,21 @@
               y: item.y + event.clientY / 10
             });
            }
-                  }
+                  },
+      menuDrawer(payload) {
+          this.menu = payload;
+      }
       },
       mounted() {
+        // Check if show floating langs
         if(!this.isMobile()) {
           window.addEventListener('mousemove', this.movingMouse);
         }
+        //  Check if show or hide menu
+        if(this.isMobile()) {
+            this.menu  = false
+        }
+        // 
         let whoami = ['Software Engineer','Frontend Developer', 'Backend  Developer']
         let i = 0;
         

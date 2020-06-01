@@ -31,9 +31,11 @@
              <!--  Menu -->
        <b-sidebar :width="110" id="sidebar-border" v-model="menu" bg-variant="none" sidebar-class="main-menu">
         <b-navbar-nav data-scroll-header class="text-center" align="center">
-          <a class="pb-3" @click="menuDrawer(false, true)" data-scroll href="#home"><i class="fas fa-home"></i></a>
-          <a class="pb-3" @click="menuDrawer(false, true)" data-scroll href="#about"><i class="fas fa-user-tie"></i></a>
-          <a class="pb-3" @click="menuDrawer(false, true)" data-scroll href="#experience"><i class="fas fa-briefcase"></i></a>
+          <a class="pb-4" @click="menuDrawer(false, true)" data-scroll href="#home"><i class="fas fa-home"></i></a>
+          <a class="pb-4" @click="menuDrawer(false, true)" data-scroll href="#about"><i class="fas fa-user-tie"></i></a>
+          <a class="pb-4" @click="menuDrawer(false, true)" data-scroll href="#experience"><i class="fas fa-briefcase"></i></a>
+          <a class="pb-4" @click="menuDrawer(false, true)" data-scroll href="#projects"><i class="fas fa-tasks"></i></a>
+          <a class="pb-4" @click="menuDrawer(false, true)" data-scroll href="#contact"><i class="fas fa-comment-dots"></i></a>
         </b-navbar-nav>
         <template v-slot:footer>
           <div class="d-flex text-light copyright align-items-center px-3 py-2">
@@ -99,6 +101,7 @@
        <!--  Content -->
     <b-container >
       <div class="spacer-inner"></div>
+       <!--  About -->
       <section id="about" :class="menu ? 'pl-5' : ''">
         <h2 class="title-section title-animation pb-5">About me</h2>
         <div class="row">
@@ -122,12 +125,14 @@
               </div>
               <div class="col-12 col-lg-6 col-md-12 mt-2">
                 <b-progress class="mt-2" max="100" show-value>
-                  <b-progress-bar value="70" label="PHP" variant="primary"></b-progress-bar>
-                  <b-progress-bar value="30" label="NodeJS" variant="danger"></b-progress-bar>
+                  <b-progress-bar value="40" label="PHP" variant="info"></b-progress-bar>
+                  <b-progress-bar value="40" label="Dart" variant="primary"></b-progress-bar>
+                  <b-progress-bar value="20" label="NodeJS" variant="danger"></b-progress-bar>
                 </b-progress>
                 <b-progress class="mt-4" max="100" show-value>
-                  <b-progress-bar value="60" label="Laravel" variant="success"></b-progress-bar>
-                  <b-progress-bar value="40" label="Adonis" variant="danger"></b-progress-bar>
+                  <b-progress-bar value="50" label="Laravel" variant="success"></b-progress-bar>
+                  <b-progress-bar value="30" label="Flutter" variant="danger"></b-progress-bar>
+                  <b-progress-bar value="20" label="Adonis" variant="primary"></b-progress-bar>
                 </b-progress>
                 <b-progress class="mt-4" max="100" show-value>
                   <b-progress-bar clas value="40" label="VueJS" variant="success"></b-progress-bar>
@@ -135,21 +140,135 @@
                   <b-progress-bar value="20" label="jQuery" variant="info"></b-progress-bar>
                   <b-progress-bar value="40" label="VanillaJS" variant="warning"></b-progress-bar>
                 </b-progress>
+                <b-progress class="mt-4" max="100" show-value>
+                  <b-progress-bar clas value="20" label="Docker" variant="success"></b-progress-bar>
+                  <b-progress-bar value="60" label="Cloud Computing" variant="danger"></b-progress-bar>
+                  <b-progress-bar value="30" label="Linux" variant="info"></b-progress-bar>
+                </b-progress>
               </div>
             </div>
             <!-- Cover Letter in Progress -->
             <!-- <b-button href="#" target="blank" variant="danger"><i class="fab fa-google-drive"></i> Download my Cover Letter</b-button> -->
           </b-card></div>
         </div>
-      </section>
+      </section> 
+      <!--  End About -->
+
+       <!--  Experience -->
       <div class="spacer-inner"></div>
       <section id="experience" :class="menu ? 'pl-5' : ''">
         <h2 class="title-section title-animation pb-5">Experience</h2>
-        <div class="row">
-          Soon...
-       </div> 
+        <b-row align-h="around" class="p-1">
+          <b-row align-h="around" v-show="isMobile()" class="p-4">
+            <h2 class="title-animation " style="text-align: left !important">Academic</h2>
+            </b-row>
+        <b-card bg-variant="white" text-variant="dark"  class="radius-card col-12 col-lg-5 col-md-12">
+        <div class="timeline" v-for="(item, key) in studies" v-bind:key="key" >
+          <div  class="justify-around  row">
+            <div class="col-1  pt-1">
+              <i class="fas fa-graduation-cap text-danger"></i>
+              <div class="timeline-divider-2"></div>
+            </div>
+            <div class="col-10">
+              <span class="text-danger w-100"> {{item.title}} <b>{{item.time}}</b></span> 
+              <h5>{{item.where}}</h5>
+              <p>{{item.what}}</p>
+            </div>
+          </div>
         </div>
+    
+       </b-card>
+       <b-row align-h="around" v-show="isMobile()" class="p-4">
+       <h2 class="title-animation " style="text-align: left !important">Jobs</h2>
+       </b-row>
+
+       
+       <b-card bg-variant="white" text-variant="dark"  class="radius-card col-12 col-lg-5 col-md-12">
+        <div class="timeline " v-for="(item, key) in jobs" v-bind:key="key" >
+          <div  class="justify-around  row">
+            <div class="col-1  pt-1">
+              <i class="fas fa-briefcase text-danger"></i>
+              <div class="timeline-divider-2"></div>
+            </div>
+            <div class="col-10">
+              <span class="text-danger w-100"> {{item.title}} <b>{{item.time}}</b></span> 
+              <h5>{{item.where}}</h5>
+              <p>{{item.what}}</p>
+            </div>
+          </div>
+        </div>
+       </b-card>
+
+        </b-row> 
       </section>
+       <!-- End Experience -->
+
+        <!--  Projects -->
+      <div class="spacer-inner"></div>
+      <section id="projects" :class="menu ? 'pl-5' : ''">
+        <h2 class="title-section title-animation pb-5">Projects</h2>
+        <b-card-group deck>
+          <b-card
+          border-variant="primary"
+          header="Fluttership - Flutter Community"
+          header-bg-variant="primary"
+          header-text-variant="white"
+          align="center"
+          no-body
+          class="project-card"
+        >
+        <a href="https://fluttership.com.br" target="blank"><div class="project-card-zoom project-card-zoom--xyz">
+          <b-card-img  src="assets/fluttership.jpg" alt="Image" bottom></b-card-img>
+        </div></a>
+        </b-card>
+          <b-card
+            border-variant="danger"
+            header="Life4Sec - Tech News"
+            header-bg-variant="danger"
+            header-text-variant="white"
+            align="center"
+            no-body
+            class="project-card"
+          >
+          <a href="https://life4sec.com.br" target="blank"><div class="project-card-zoom project-card-zoom--xyz">
+            <b-card-img  src="assets/life4sec.jpg" alt="Image" bottom></b-card-img>
+          </div></a>
+          
+          </b-card>
+        </b-card-group>
+        
+      </section>
+       <!-- End Projects -->
+       
+         <!--  Projects -->
+      <div class="spacer-inner"></div>
+      <section id="contact" >
+        <h2 class="title-section title-animation">Get In Touch</h2>
+        <div class="row p-3" >
+          <b-jumbotron>
+            <template v-slot:lead>
+              <p>Do you want to download this website, no problem! This is open source!</p>
+              <p>Remember to star this repository!</p>
+              <p>Remember to request a merge if you find a bug or want to improve!</p>
+
+            </template>
+        
+            <hr class="my-4">
+        
+            <p>
+             Need contact me? Let's go!
+            </p>
+        
+            <div class="row">
+              <div class="col-12 col-lg-4 col-md-12 pb-4"><b-button variant="success" href="https://api.whatsapp.com/send?phone=5521970879050&text=Hello%20Alexandro%20Castro!"><i class="fab fa-whatsapp"></i> WhatsApp</b-button></div>
+              <div class="col-12 col-lg-8 col-md-12"><b-button variant="info"  href="mailto:desenvolvimento@fluttership.com.br"><i class="fas fa-envelope" ></i> desenvolvimento@fluttership.com.br</b-button></div>
+            
+          </div>
+          </b-jumbotron>
+      </div> 
+      </section>
+       <!-- End Projects -->
+
     </b-container>
      <!--  end Content -->
     
@@ -159,8 +278,7 @@
       <b-container >
 
         <div class="text-center row">
-          <div class="cp col-12" >Created with <i class="fas fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></div>
-          <div class="cp col-12" >This website is working in progress, dont judge me <i class="fas fa-heart text-danger"></i></a></div>
+          <div class="cp col-12 pb-4" >Created with <i class="fas fa-heart text-danger"></i> by  <a class="text-white" href="https://github.com/AlexcastroDev/">Alexandro Castro</a></div>
           </div>
 
         <b-row class="text-center pt-3 align-self-center">
@@ -185,7 +303,62 @@
         el: '#app',
         data: {
           whoami: "Developer",
-          menu: true
+          menu: true,
+          modals: {
+            fluttership: false
+          },
+          studies: [
+            {
+              title: "Data Science",
+              time: "2020  ~ present",
+              where: "Cruzeiro do sul",
+              what: "Data minnig, databases, IA, Machine learning, project integration, Operacional System, Computer Science"
+            },
+            {
+              title: "Frontend",
+              time: "2020  ~ 2020",
+              where: "Origamid",
+              what: "HTML5, CSS3, keyframes, UI / UX, Javascript, ES6"
+            },
+            {
+              title: "Flutter",
+              time: "2019  ~ 2019",
+              where: "Udemy",
+              what: "Widgets, Dart Lang, Constructors, Methods, Functions, SqLite, API integrations"
+            },
+            {
+              title: "PHP",
+              time: "2019  ~ 2019",
+              where: "Udemy",
+              what: "PHP 5.6, 7.x,  PSR's, best practices, frameworks"
+            },
+          ],
+          jobs: [
+            {
+              title: "DealerUP",
+              time: "2019  ~ present",
+              where: "Software Engineer",
+              what: "Developed & maintained multiple products, Created frontend with VueJS and Web Services with Laravel"
+            },
+            {
+              title: "H1 Code",
+              time: "2019  ~ present",
+              where: "Freelancer",
+              what: "Mobile development with Flutter, Web Development with Elementor / Wordpress, WebApp SPA and PWA"
+            },
+            {
+              title: "StudioPrime",
+              time: "2018  ~ 2019",
+              where: "FullStack developer",
+              what: "Developed & maintained audio visual product with html, css, Javascript, jQuery and php as Backend"
+            },
+            {
+              title: "PagliaHost",
+              time: "2014 ~ 2018",
+              where: "Freelancer",
+              what: "Cloud Manager on demand, Core developer, Backend developer, Maintained Web services with NodeJS"
+            },
+          ]
         },
         methods: {
           isMobile() {

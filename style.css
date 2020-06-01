@@ -33,7 +33,7 @@ body {
 }
 
 .copyright {
-    height: 200px;
+    height: 300px;
     width: auto;
     color: #9c9ab3;
     font-size: 14px;
@@ -42,6 +42,10 @@ body {
     white-space: nowrap;
     display: inline-block;
     overflow: visible;
+}
+
+.copyright span {
+    margin-top: 60px;
 }
 
 .fixBootstrapAvatar {

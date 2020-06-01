@@ -18,6 +18,22 @@ body {
     z-index: 1;
 }
 
+.main-content {
+    background-color: #F9F9FF;
+}
+.spacer-inner {
+    padding-top: 40px;
+    padding-bottom: 80px;
+}
+.title-section {
+        font-family: "Rubik",Sans-serif;
+        font-size: 36px;
+        color: #454360;
+        font-weight: 900;
+        margin-left: 14px;
+        position: relative;
+}
+
 .menu-icon {
     font-size: 20px;
 }

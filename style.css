@@ -44,9 +44,7 @@ body {
     overflow: visible;
 }
 
-.copyright span {
-    margin-top: 60px;
-}
+
 
 .fixBootstrapAvatar {
     width: 6.5em !important;
@@ -209,6 +207,9 @@ color: #fff;
     .navbar-events-vh {
         margin-left: 0.1rem  !important;
         margin-right: 0.1rem  !important;
+    }
+    .copyright span {
+        margin-top: 60px;
     }
 }
 .main-count {

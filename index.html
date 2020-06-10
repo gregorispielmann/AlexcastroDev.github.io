@@ -17,7 +17,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
-    
+    <!-- <script src="https://unpkg.com/vue-cool-lightbox"></script> -->
+    <!-- <link rel="stylesheet" media="all" href="https://unpkg.com/vue-cool-lightbox/dist/vue-cool-lightbox.min.css" />     -->
     <link type="text/css" rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/vue@latest/dist/vue.min.js"></script>
     <script src="plugins/smooth.js"></script>
@@ -206,6 +207,81 @@
         <!--  Projects -->
       <div class="spacer-inner"></div>
       <section id="projects" :class="menu ? 'pl-5' : ''">
+        <h2 class="title-section title-animation pb-5"> Certificates</h2>
+        <b-card-group deck>
+          <b-card
+          border-variant="primary"
+          header-bg-variant="primary"
+          header-text-variant="white"
+          align="center"
+          no-body
+          class="project-card"
+        >
+        <template slot="header">
+          <i class="fa fa-star"></i> VueJS <i class="fa fa-star"></i>
+        </template>
+        <a><div class="project-card-zoom project-card-zoom--xyz">
+          <b-card-img  src="assets/certs/vue.jpeg" alt="Image" bottom></b-card-img>
+        </div></a>
+        </b-card>
+          <b-card
+            border-variant="danger"
+            header-bg-variant="danger"
+            header-text-variant="white"
+            align="center"
+            no-body
+            class="project-card"
+          >
+
+        <template slot="header">
+          <i class="fa fa-star"></i> React Native <i class="fa fa-star"></i>
+        </template>
+          <a href="https://life4sec.com.br" target="blank"><div class="project-card-zoom project-card-zoom--xyz">
+            <b-card-img  src="assets/certs/reactnative.jpeg" alt="Image" bottom></b-card-img>
+          </div></a>
+          
+          </b-card>
+          <b-card
+          border-variant="primary"
+          header-bg-variant="primary"
+          header-text-variant="white"
+          align="center"
+          no-body
+          class="project-card"
+        >
+        <template slot="header">
+          <i class="fa fa-star"></i> Flutter <i class="fa fa-star"></i>
+        </template>
+        <a href="https://fluttership.com.br" target="blank"><div class="project-card-zoom project-card-zoom--xyz">
+          <b-card-img  src="assets/certs/flutter.jpeg" alt="Image" bottom></b-card-img>
+        </div></a>
+        </b-card>
+        <b-card
+            border-variant="danger"
+            header-bg-variant="danger"
+            header-text-variant="white"
+            align="center"
+            no-body
+            class="project-card"
+          >
+
+        <template slot="header">
+          <i class="fa fa-star"></i> PHP <i class="fa fa-star"></i>
+        </template>
+          <a href="https://life4sec.com.br" target="blank"><div class="project-card-zoom project-card-zoom--xyz">
+            <b-card-img  src="assets/certs/php.jpeg" alt="Image" bottom></b-card-img>
+          </div></a>
+          
+          </b-card>
+        </b-card-group>
+        
+      </section>
+       <!-- End Projects -->
+       
+
+        <!-- Certificados -->
+      <div class="spacer-inner"></div>
+      <section id="projects" :class="menu ? 'pl-5' : ''">
         <h2 class="title-section title-animation pb-5">Projects</h2>
         <b-card-group deck>
           <b-card
@@ -240,7 +316,8 @@
       </section>
        <!-- End Projects -->
        
-         <!--  Projects -->
+
+         <!-- get in touch -->
       <div class="spacer-inner"></div>
       <section id="contact" :class="menu ? 'pl-5' : ''">
         <h2 class="title-section title-animation">Get In Touch</h2>

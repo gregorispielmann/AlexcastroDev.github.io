@@ -15,7 +15,6 @@
     <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
     <link rel="icon" type="image/png" href="https://i.imgur.com/5vIKSig.png" />
     <link href="https://fonts.googleapis.com/css2?family=Rubik&display=swap" rel="stylesheet">
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-analytics.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.6/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/js/all.min.js"></script>
@@ -378,18 +377,7 @@
 </body>
 
 <script>
-    var firebaseConfig = {
-      apiKey: "AIzaSyCwlQfxttQbu7KSxZy1Ec1CI_HyjiYWzZE",
-      authDomain: "cvgithub-a1d6b.firebaseapp.com",
-      databaseURL: "https://cvgithub-a1d6b.firebaseio.com",
-      projectId: "cvgithub-a1d6b",
-      storageBucket: "cvgithub-a1d6b.appspot.com",
-      messagingSenderId: "552723524178",
-      appId: "1:552723524178:web:3b4b58b341d37543b9cd8b",
-      measurementId: "G-3X3X9GHQVP"
-    };
     // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
     firebase.analytics();
 
     var app = new Vue({
